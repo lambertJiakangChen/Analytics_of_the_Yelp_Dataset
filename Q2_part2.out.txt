@@ -1,0 +1,10 @@
+Japanese:48181:91.77
+Canadian (New):39046:113.18
+Chinese:21924:51.59
+American (New):21764:119.58
+Italian:19729:85.78
+American (Traditional):17222:95.15
+Vietnamese:13829:64.02
+Asian Fusion:12416:70.15
+Middle Eastern:11849:101.27
+French:11735:126.18

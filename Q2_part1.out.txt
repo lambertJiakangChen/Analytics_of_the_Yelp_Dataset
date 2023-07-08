@@ -1,0 +1,10 @@
+Japanese:525
+Chinese:425
+Canadian (New):345
+Italian:230
+Vietnamese:216
+American (New):182
+American (Traditional):181
+Asian Fusion:177
+Mediterranean:149
+Indian:144

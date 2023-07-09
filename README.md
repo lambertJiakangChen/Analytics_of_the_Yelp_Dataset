@@ -70,9 +70,10 @@ $ python3 dist.py yelp_academic_dataset_business.json Vancouver BC
 
 ## network.py
 Original file provided by Kaggle ([*yelp_academic_dataset_user.json*](https://www.kaggle.com/yelp-dataset/yelp-dataset/version/3?select=yelp_academic_dataset_user.json)) for evaluation.
-Given a collection of users in a file `/path-to-file/filename.json` and an integer `n` (n >= 100) which indicates the social network of Yelp friends among Yelp users who sent **no less than `n` useful votes**,
-The social network is represented as a graph G(V,E), where V is a set of vertices representing the Yelp users and E is a set of edges representing friendships between Yelp users.
-The graph/network is represented in a file using the edge list format. An edge list is a list that represents all the edges in a graph. For example, a small fully connected triangle-like graph between vertices *a1, a2, a3* is represented in the edge list as:
+
+Given a collection of users in a file `/path-to-file/filename.json` and an integer `n` (n >= 100) which indicates the social network of Yelp friends among Yelp users who sent **no less than `n` useful votes**.
+
+The social network is represented as a graph G(V,E), where V is a set of vertices representing the Yelp users and E is a set of edges representing friendships between Yelp users. The graph/network is represented in a file using the edge list format. An edge list is a list that represents all the edges in a graph. For example, a small fully connected triangle-like graph between vertices *a1, a2, a3* is represented in the edge list as:
 ```
 a1 a2
 a2 a3

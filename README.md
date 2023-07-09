@@ -89,34 +89,22 @@ For example, the following command creates the social network of Yelp friends am
 $ python3 network.py yelp_academic_dataset_user.json 100
 ```
 
-## Q4. Compute Network Statistics (20%, 5% each)
-Given a Yelp social network as an edge list in a text file `/path-to-file/filename.txt` (the format is the same as the Q3 output), write a Python script (*graph.py*) that computes the following network statistics and writes the answer to a text file named ***Q4.out*** in the **current working directory**.
-
-* the number of vertices (*|V|*) and the number of edges (*|E|*) of the network. The output should be two space-separated integers.
-* The average node degree of the graph (*avgNodeDegree*). The degree of a node is the number of edges that are incident to the node (i.e., #neighbors).
-* The number of connected components in the network (*#components*). A connected component is a connected subgraph that is not part of any larger connected subgraph. The connected components of any graph partition its vertices into disjoint sets, and are the induced subgraphs of those sets. A graph that is itself connected has exactly one component, consisting of the whole graph.
-* The number of triangles in the network (*#triangles*). For example, vertices *a1, a2, a3* (the order doesn't matter) form a triangle in the social network if *a1* and *a2* are friends, *a1* and *a3* are friends, and *a2* and *a3* are friends.
-
-The output (Q4.out) should be one line per answer to the question as follows:
-```
-|V| |E|
-avgNodeDegree
-#components
-#triangles
-```
-For example:
-```
-4415 402945
-182.53
-3
-10116817
-```
+## graph.py
+Yelp social network with format same as the output of network.py (You can directly use the result from network.py as input file)
 
 Your script should be run as follows:
 ```
-$ python3 graph.py /path-to-file/filename.txt
+$ python3 graph.py /path-to-file/filename.txt (Linux)
+or
+$ python graph.py /path-to-file/filename.txt (Windows)
 ```
 For example:
 ```
-$ python3 graph.py graph.txt
+$ python3 graph.py graph.txt (change graph.txt to the name of your input text file)
 ```
+
+The output (Q4.out) as follows:
+* the number of vertices (*|V|*) and the number of edges (*|E|*) of the network.
+* The average node degree of the graph (*avgNodeDegree*).
+* The number of connected components in the network (*#components*).
+* The number of triangles in the network (*#triangles*). 

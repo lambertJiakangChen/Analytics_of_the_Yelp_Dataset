@@ -42,11 +42,13 @@ Given a collection of businesses in a file `/path-to-file/filename.json`, a two-
 dist.py contains **3** parts
 
 Part 1. Compute the frequency distribution of the number of restaurants in each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.) Display the **top-10** categories in descending order with one line per pair of values as follows:
+
     ```
     category:#restaurants
     ```
     
 Part 2. Compute the frequency distribution of the number of reviews submitted for each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.). Display the **top-10** reviews in descending order with one line per triplet as follows:
+
     ```
     category:#reviews:average_review_count
     ```
@@ -54,11 +56,13 @@ Part 2. Compute the frequency distribution of the number of reviews submitted fo
 Part 3. Create a bar chart that shows the **top-5** restaurant categories identified in part (1), where the x-axis represents the restaurant category, and the y-axis represents its frequency (#restaurants).
 
 Run the script as follows:
+
     ```
     $ python3 dist.py /path-to-file/filename.json city ST (Linux)
     or
-    $ python dist.py /path-to-file/filename.json city ST (Windows)
+    $ python dist.py /path-to-file/filename.json city ST (Window)
     ```
+    
     For example:
     ```
     $ python3 dist.py yelp_academic_dataset_business.json Vancouver BC

@@ -68,26 +68,22 @@ For example:
 $ python3 dist.py yelp_academic_dataset_business.json Vancouver BC
 ```
 
-## Q3. Creating the Yelp Social Network (20%)
-The social network will be represented as a graph G(V,E), where V is a set of vertices representing the Yelp users and E is a set of edges representing friendships between Yelp users.
-The graph/network should be represented in a file using the edge list format. An edge list is a list that represents all the edges in a graph. Each edge is represented as a space-separated pair of vertices. For example, a small fully connected triangle-like graph between vertices *a1, a2, a3* would be represented in the edge list as:
+## network.py
+Original file provided by Kaggle ([*yelp_academic_dataset_user.json*](https://www.kaggle.com/yelp-dataset/yelp-dataset/version/3?select=yelp_academic_dataset_user.json)) for evaluation.
+Given a collection of users in a file `/path-to-file/filename.json` and an integer `n` (n >= 100) which indicates the social network of Yelp friends among Yelp users who sent **no less than `n` useful votes**,
+The social network is represented as a graph G(V,E), where V is a set of vertices representing the Yelp users and E is a set of edges representing friendships between Yelp users.
+The graph/network is represented in a file using the edge list format. An edge list is a list that represents all the edges in a graph. For example, a small fully connected triangle-like graph between vertices *a1, a2, a3* is represented in the edge list as:
 ```
 a1 a2
 a2 a3
 a3 a1
 ```
-Note that the order of the lines does not matter, and edges are bidirectional (so either *"a1 a2"* or *"a2 a1"* should be listed but NOT both).
 
-
-Given a collection of users in a file `/path-to-file/filename.json` and an integer `n` (n >= 100), write a Python script (*network.py*) that creates the social network of Yelp friends among Yelp users who sent **no less than `n` useful votes**, and writes the edge list of the created graph to a text file named **Q3.out** in the **current working directory**. Your script should only consider Yelp users who sent no less than `n` useful votes. For example, users *a1* and *a2* are friends, who sent *n+1* and *n-1* useful votes, respectively. In this case, neither *"a1 a2"* nor *"a2 a1"* should be listed.
-
-We use the original file provided by Kaggle ([*yelp_academic_dataset_user.json*](https://www.kaggle.com/yelp-dataset/yelp-dataset/version/3?select=yelp_academic_dataset_user.json)) for evaluation.
-
-Your script should be run as follows:
+Run the script as follows:
 ```
 $ python3 network.py /path-to-file/filename.json n
 ```
-For example, the following command should create the social network of Yelp friends among Yelp users who sent no less than 100 useful votes.
+For example, the following command creates the social network of Yelp friends among Yelp users who sent no less than 100 useful votes.
 ```
 $ python3 network.py yelp_academic_dataset_user.json 100
 ```
@@ -123,36 +119,3 @@ For example:
 ```
 $ python3 graph.py graph.txt
 ```
-
-## FAQ
-### Restaurant categories in Q2
-Please note you only need to find the top-10 categories. Therefore, you don't need to name all legit categories. Also, your code will be evaluated using one of the following parameters based on the original Kaggle dataset:
-```
-Austin, TX
-Portland, OR
-Atlanta, GA
-Orlando, FL
-Vancouver, BC
-Boston, MA
-```
-For the sake of clarity, please assume that the following categories are NOT legit restaurant categories based on geographical origin:
-```
-Tex-Mex
-Ethnic Food
-Sushi Bars
-Specialty Food
-Tacos
-```
-You still need to filter out other invalid categories.
-
-### Is there a good source for studying and learning of how to work with json files data using python scripts?
-You could use the built-in json package to parse JSON files. You can refer to this website (https://docs.python.org/3/library/json.html) for the documentation and some code snippets.
-
-### For Q3, are we using the user_id attribute to represent the vertices in the edge list for the output?
-Yes. You should use the user_id attribute to represent users.
-
-### The files I produced usually have a new line at the end. Is that okay?
-That is okay. Ending files with a new line is a standard convention.
-
-### For Q2, I read the categories from a text file. Is it okay if I submit the text file along with my other files?
-You should strictly follow the directory structure specified in the project description, which means your submission should not include any additional files. I recommend you hard-code the list in your script.

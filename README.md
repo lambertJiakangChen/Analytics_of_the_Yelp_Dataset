@@ -43,11 +43,15 @@ dist.py contains **3** parts
 
 Part 1. Compute the frequency distribution of the number of restaurants in each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.) Display the **top-10** categories in descending order with one line per pair of values as follows:
 
+```
 category:#restaurants
+```
     
 Part 2. Compute the frequency distribution of the number of reviews submitted for each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.). Display the **top-10** reviews in descending order with one line per triplet as follows:
 
+```
 category:#reviews:average_review_count
+```
 
 Part 3. Create a bar chart that shows the **top-5** restaurant categories identified in part (1), where the x-axis represents the restaurant category, and the y-axis represents its frequency (#restaurants).
 

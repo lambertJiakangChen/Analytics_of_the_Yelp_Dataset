@@ -14,7 +14,7 @@ This project contains four Python scripts/programs. The first program (*dstats.p
 ## dstats.py
 Original file provided by Kaggle ([*yelp_academic_dataset_business.json*](https://www.kaggle.com/yelp-dataset/yelp-dataset/version/3?select=yelp_academic_dataset_business.json)) for evaluation.
 
-The variables `/path-to-file/filename.json` and `ST` need to be passed to the script as command line arguments. The [*argparse*](https://docs.python.org/3/library/argparse.html) module makes it easy to write user-friendly command-line interfaces.
+The variables `/path-to-file/filename.json` and a two-letter state/province abbreviation `ST` need to be passed to the script as command line arguments. The [*argparse*](https://docs.python.org/3/library/argparse.html) module makes it easy to write user-friendly command-line interfaces.
 
 Run the script as follows:
 ```
@@ -33,60 +33,35 @@ The file *Q1.out* consists of six line-separated numbers as follows:
 * The average number of stars of restaurants in the `city`, `ST`
 * The average number of reviews for all businesses in the `city`, `ST`
 * The average number of reviews for restaurants in the `city`, `ST`
-* 
-## Q2. Distribution Statistics (30%, 10% each)
-Given a collection of businesses in a file `/path-to-file/filename.json`, a two-letter state/province abbreviation `ST` (case-sensitive), and a name of a city `city` (case-sensitive), write a Python script (*dist.py*) that performs the following tasks:
+ 
+## dist.py
+Original file provided by Kaggle ([*yelp_academic_dataset_business.json*](https://www.kaggle.com/yelp-dataset/yelp-dataset/version/3?select=yelp_academic_dataset_business.json)) for evaluation.
 
-1. For all restaurants in the `city`, `ST`, compute the frequency distribution of the number of restaurants in each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.). Your script should only consider restaurant categories that are based on geographical origin. For example, "Mediterranean" is a legit restaurant category while "Sandwiches" is not. Please note that a restaurant can fall into multiple categories.
-Write the **top-10** categories to a text file named ***Q2_part1.out*** in the **current working directory**. The output should be one line per pair of values as follows:
+Given a collection of businesses in a file `/path-to-file/filename.json`, a two-letter state/province abbreviation `ST` (case-sensitive), and a name of a city `city` (case-sensitive) need to be passed to the script as command line arguments
+
+dist.py contains **3** parts
+
+Part 1. Compute the frequency distribution of the number of restaurants in each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.) Display the **top-10** categories in descending order with one line per pair of values as follows:
     ```
     category:#restaurants
     ```
-    For example:
-    ```
-    Japanese:525
-    Chinese:425
-    Canadian (New):345
-    Italian:230
-    Vietnamese:216
-    American (New):182
-    American (Traditional):181
-    Asian Fusion:177
-    Mediterranean:149
-    Indian:144
-    ```
-
-2. For all restaurants in the `city`, `ST`, compute the frequency distribution of the number of reviews submitted for each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.). Your script should only consider restaurant categories that are based on geographical origin. For example, "Mediterranean" is a legit restaurant category while "Sandwiches" is not. Please note that a restaurant can fall into multiple categories.
-Write the top-10 most reviewed categories in descending order (from the most reviewed category to the least reviewed) to a text file named ***Q2_part2.out*** in the **current working directory**. The output should be one line per triplet as follows:
+Part 2. Compute the frequency distribution of the number of reviews submitted for each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.). Display the **top-10** reviews in descending order with one line per triplet as follows:
     ```
     category:#reviews:average_review_count
     ```
-    For example:
-    ```
-    Japanese:48181:91.77
-    Canadian (New):39046:113.18
-    Chinese:21924:51.59
-    American (New):21764:119.58
-    Italian:19729:85.78
-    American (Traditional):17222:95.15
-    Vietnamese:13829:64.02
-    Asian Fusion:12416:70.15
-    Middle Eastern:11849:101.27
-    French:11735:126.18
-    ```
 
-3. Create a bar chart that shows the **top-5** (NOT top-10) restaurant categories identified in part (1), where the x-axis represents the restaurant category, and the y-axis represents its frequency (#restaurants). The size of the bar chart should be **10-inch-by-10-inch**. The chart should be properly labeled. Save the plot as a **PDF** file named ***Q2_part3.pdf*** in the **current working directory**.
-We use the original file provided by Kaggle ([*yelp_academic_dataset_business.json*](https://www.kaggle.com/yelp-dataset/yelp-dataset/version/3?select=yelp_academic_dataset_business.json)) for evaluation.
-Your script should be run as follows:
+Part 3. Create a bar chart that shows the **top-5** restaurant categories identified in part (1), where the x-axis represents the restaurant category, and the y-axis represents its frequency (#restaurants).
+
+Run the script as follows:
     ```
-    $ python3 dist.py /path-to-file/filename.json city ST
+    $ python3 dist.py /path-to-file/filename.json city ST (Linux)
+    or
+    $ python dist.py /path-to-file/filename.json city ST (Windows)
     ```
     For example:
     ```
     $ python3 dist.py yelp_academic_dataset_business.json Vancouver BC
     ```
-
-**Hint:** Use the [*matplotlib*](https://matplotlib.org/stable/index.html) package to create the plot. You can follow this [tutorial](https://matplotlib.org/stable/plot_types/basic/bar.html#sphx-glr-plot-types-basic-bar-py) about using *matplotlib* to create a bar chart.
 
 ## Q3. Creating the Yelp Social Network (20%)
 The social network will be represented as a graph G(V,E), where V is a set of vertices representing the Yelp users and E is a set of edges representing friendships between Yelp users.

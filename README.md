@@ -45,6 +45,7 @@ Part 1. Compute the frequency distribution of the number of restaurants in each 
     ```
     category:#restaurants
     ```
+    
 Part 2. Compute the frequency distribution of the number of reviews submitted for each category of restaurants (e.g., Japanese, Chinese, Canadian, Italian, etc.). Display the **top-10** reviews in descending order with one line per triplet as follows:
     ```
     category:#reviews:average_review_count
